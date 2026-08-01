@@ -2,7 +2,7 @@
 
 This directory contains the full source code and documentation for the CollabDocs assessment. Below is a list of exactly what is included and how it satisfies the deliverables:
 
-1. **Source Code**: The complete Next.js (App Router) codebase, including custom CSS for styling, Tiptap for the rich-text editor, and better-sqlite3 for persistence.
+1. **Source Code**: The complete Next.js (App Router) codebase, including custom CSS for styling, Tiptap for the rich-text editor, and PostgreSQL for persistence.
 2. **README.md**: Includes local setup and run instructions, prerequisites, and testing commands.
 3. **ARCHITECTURE.md**: A short architecture note explaining framework, database, state/auth, and styling choices.
 4. **AI_WORKFLOW.md**: An AI workflow note detailing tools used, speed improvements, rejected AI outputs, and verification methods.
@@ -15,5 +15,5 @@ This directory contains the full source code and documentation for the CollabDoc
 - **Document Creation & Editing**: Fully functioning rich-text editor using Tiptap.
 - **File Upload**: Create a new document by uploading a `.txt` or `.md` file.
 - **Sharing**: Mock authentication flow to test sharing permissions between distinct seeded users.
-- **Persistence**: File-based SQLite (`better-sqlite3`) handling local storage seamlessly.
+- **Persistence**: PostgreSQL database handling storage seamlessly across serverless environments.
 - **Premium UI**: Built with custom Vanilla CSS variables showcasing a modern glassmorphism aesthetic.

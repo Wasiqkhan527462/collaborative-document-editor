@@ -1,12 +1,12 @@
 # CollabDocs
 
-A lightweight, collaborative document editor built with Next.js, SQLite, and Tiptap.
+A lightweight, collaborative document editor built with Next.js, Postgres, and Tiptap.
 
 ## Features
 - **Document Creation & Editing**: Rich text editor powered by Tiptap (Bold, Italic, Underline, Headings, Lists). Auto-saving implemented via debounced API calls.
 - **File Upload**: Upload `.txt` or `.md` files to automatically create a new document with the file's contents.
 - **Sharing Model**: Share documents with other users. Mock authentication is used to demonstrate switching between users and accessing shared files.
-- **Persistence**: SQLite database via `better-sqlite3` to store users, documents, and shares securely and locally without needing external services.
+- **Persistence**: Postgres database to store users, documents, and shares securely and locally or remotely.
 - **Premium UI**: Custom Vanilla CSS with CSS Variables implementing a modern, glassmorphism design system.
 
 ## Setup Instructions
@@ -25,13 +25,17 @@ A lightweight, collaborative document editor built with Next.js, SQLite, and Tip
    ```bash
    npm install
    ```
+4. Create a `.env.local` file in the root directory and add your Postgres connection string:
+   ```env
+   POSTGRES_URL=postgres://user:password@localhost:5432/dbname
+   ```
 
 ### Running the App
 Start the development server:
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser. The SQLite database will automatically initialize and seed initial users on the first run.
+Open [http://localhost:3000](http://localhost:3000) in your browser. The Postgres database will automatically initialize and seed initial users on the first run.
 
 ### Running Tests
 To run the automated tests using Vitest:

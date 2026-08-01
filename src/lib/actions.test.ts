@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
 import { createDocument, getDocument, getDocuments, shareDocument, getDocumentShares, revokeDocumentShare, saveDocumentVersion, getDocumentVersions, pingSession, getActiveSessions } from './actions';
-import db from './db';
+import db, { initDb } from './db';
 
 vi.mock('next/cache', () => ({
   revalidatePath: vi.fn(),
@@ -10,6 +10,16 @@ describe('Document Actions', () => {
   const testUserId = 'user-1'; // User 1
   const testUserId2 = 'user-2'; // Wasiq
   let testDocId: string;
+
+  beforeAll(async () => {
+    // Only run tests if DATABASE_URL is set or we fall back to localhost
+    await initDb();
+  });
+
+  afterAll(async () => {
+    // End the pool after tests to allow process to exit
+    await db.end();
+  });
 
   it('should create and retrieve a document', async () => {
     testDocId = await createDocument(testUserId, 'Test Document', '<p>Hello world</p>');
