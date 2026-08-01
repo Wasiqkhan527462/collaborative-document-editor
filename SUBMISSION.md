@@ -7,7 +7,7 @@ This directory contains the full source code and documentation for the CollabDoc
 3. **ARCHITECTURE.md**: A short architecture note explaining framework, database, state/auth, and styling choices.
 4. **AI_WORKFLOW.md**: An AI workflow note detailing tools used, speed improvements, rejected AI outputs, and verification methods.
 5. **SUBMISSION.md**: This file, listing exactly what is included in the submission folder.
-6. **Live Product URL**: [TODO: Add Live URL Here]
+6. **Live Product URL**: [https://collaborative-document-editor-74bi.vercel.app/](https://collaborative-document-editor-74bi.vercel.app/)
 7. **video_url.txt**: Contains the link to the 3-5 minute walkthrough video.
 8. **Automated Tests**: Included in `src/lib/actions.test.ts` (run via `npm run test`).
 
